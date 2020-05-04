@@ -10,6 +10,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- <script src="validator.js" type="text/javascript"></script> -->
+    <style>
+        .dropdown-toggle::after{
+            display: none;
+        }
+        .dropdown-menu{
+            left: -9em;
+        }
+    </style>
 </head>
 
 <body style="background-color: #ededed;">
@@ -17,14 +25,19 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="padding-left: 2em;">
             <a class="navbar-brand text-white" href="#">E-Checkin</a>
         </div>
-        <div style="padding-right: 2em;">
-            <form action="createClass.html" class="form-inline my-2 my-lg-0">
-                <div style="padding-left: 2em;">
-                    <button class="btn btn-warning" style="color: white;" type="submit">Create Class</button>
-                    <img src="image/user.png" alt="" style="width: 30px;">
+        <div class="justify-content-right d-flex flex-row pr-3">
+            <button class="btn btn-warning mr-2" style="color: white;" type="submit">Create Class</button>
+            <div class="dropdown pt-1">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="image/user.png" class="dropdown-toggle" style="width: 30px;">
+                </a>
+                      
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">Nantatchaporn Thangsuk</a>
+                    <a class="dropdown-item" href="#">Change password</a>
+                    <a class="dropdown-item" href="#">Logout</a>
                 </div>
-
-            </form>
+            </div>
         </div>
     </nav>
     <a href="class_t.html" class="text-decoration-none">
