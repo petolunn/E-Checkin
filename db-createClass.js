@@ -8,7 +8,8 @@ auth.onAuthStateChanged(user => {
 //create new class
 const createClass = document.querySelector('#registerForm');
 createClass.addEventListener('submit', (e) => {
-    e.preventDefault;
+    e.preventDefault();
+    
     db.collection('classes').add({
         code: createClass['code'].value,
         title: createClass['subject'].value,
