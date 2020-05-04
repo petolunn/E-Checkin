@@ -1,0 +1,19 @@
+body{
+	font-family: 'Mitr', sans-serif !important;
+	background-color: rgb(218, 218, 218);
+}
+.box1{
+	background: #364E71;
+	height: 300px;
+	width: 300px;
+	z-index: 101;
+}
+#create{
+	width: 45%;
+}
+
+.subject{
+	width: 100%;
+	background: rgb(170, 170, 170);
+	
+}
