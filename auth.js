@@ -16,9 +16,4 @@ loginForm.addEventListener('submit', (e) => {
     const password = loginForm['password'].value;
 
     auth.signInWithEmailAndPassword(email, password);
-    
-    var user = firebase.auth().currentUser;
-    var role = user.role;
-
-    console.log(role);
 })
