@@ -60,6 +60,6 @@ signupForm.addEventListener('submit', (e) => {
     //sign up the user
     if(status){
         auth.createUserWithEmailAndPassword(em, pw)
-        setTimeout(function(){window.location.href = 'home_t.html';}, 3000);
+        setTimeout(function(){window.location.href = 'home-teacher.html';}, 3000);
     }
 });
