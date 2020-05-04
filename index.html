@@ -21,7 +21,7 @@
         <h2 class="text-center">E-Checkin</h2><br>
         <p class="text-center">Sign in to E-Checkin</p>
         <div class="text-white p-4 rounded" style="background: #364E71;">
-            <form action="home_t.html" id="registerForm" onsubmit="return validateForm()" method="POST">
+            <form id="login-Form">
                 <div class="form-group">
                     <label for="email">Email address</label> <br>
                     <input type="text" class="form-control" id="email">
@@ -30,13 +30,41 @@
                     <label for="password">Password</label> <br>
                     <input type="text" class="form-control" id="password">
                 </div>
-
                 <button type="submit" class="btn btn-warning text-white w-100">Sign in</button>
             </form>
         </div>
         <p class="text-center text-dark mt-2">Don't have an account ? <a href="signup1.html">Sign up</a></p>
     </div>
     
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
 
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBb3S8CjVjIZ8owryUmw2hZV_LJJQW2gYM",
+            authDomain: "e-checkin-dfb17.firebaseapp.com",
+            databaseURL: "https://e-checkin-dfb17.firebaseio.com",
+            projectId: "e-checkin-dfb17",
+            storageBucket: "e-checkin-dfb17.appspot.com",
+            messagingSenderId: "1088146595491",
+            appId: "1:1088146595491:web:a115fd31ee3568b26aa916",
+            measurementId: "G-QHE8T5TMSG"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        firebase.analytics();
+    </script>
+
+    <script src="auth.js"></script>
 </body>
 </html>
