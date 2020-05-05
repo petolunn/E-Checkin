@@ -8,6 +8,14 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- <script src="validator.js" type="text/javascript"></script> -->
+    <style>
+      .dropdown-toggle::after{
+          display: none;
+      }
+      .dropdown-menu{
+          left: -13em;
+      }
+    </style>
 </head>
 <body style="background-color: #ededed;" onload="refeshText()">
     <nav class="navbar navbar-expand-lg d-flex justify-content-around" style="background: #364E71;">
@@ -21,7 +29,8 @@
                 </div>
           </form>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <div class="container-fluid">
       <div class="row">
@@ -32,6 +41,7 @@
             <br>
             <p>7 Students<span class="mr-2"></span>1 Teacher</p>
             <a href="checkin_std.html" class="btn btn-warning">Check</a>
+            
           </div>
         </div>
         <div class="col-12 col-md-9 h-100">
@@ -55,9 +65,39 @@
             </table>
           </div>
           <div class="float-right">
-            <a href="#" class="text-dark mr-1">Add</a>
+            <a  href="#" class="text-dark mr-1"  data-toggle="modal" data-target="#myModal">Add</a>
             <a href="#" class="text-dark mr-1">Delete</a>
             <a href="#" class="text-dark mr-1">Export</a>
+          </div>
+          <div class="modal fade" id="myModal" role="dialog">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                    
+                    <h4 class="modal-title">Add Student</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                    <form id="login-Form">
+                <div class="form-group">
+                    <label for="Name">Name</label> <br>
+                    <input type="text" class="form-control" id="Name">
+                </div>
+                <div class="form-group">
+                    <label for="Email_student">Email</label> <br>
+                    <input type="text" class="form-control" id="Email_student">
+                </div>
+                <div class="form-group">
+                    <label for="Student_id">Student_id</label> <br>
+                    <input type="text" class="form-control" id="Student_id">
+                </div>
+                <button type="submit" class="btn btn-warning text-white" style="width: 49%;">Create</button>
+                <button type="submit" class="btn btn-danger text-white" style="width: 49%;">Cancel</button>
+            </form>
+                    </div>
+                    
+                    </div>
+              </div>
           </div>
         </div>
       </div>
