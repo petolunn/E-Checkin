@@ -16,6 +16,11 @@ loginForm.addEventListener('submit', (e) => {
     const password = loginForm['password'].value;
 
     auth.signInWithEmailAndPassword(email, password);
-    
-    setTimeout(function(){window.location.href = 'home-teacher.html';},3500);
+    db.collection('users').doc(email).get().then(function(doc) {
+        if (doc.data().role == 'Teacher') { 
+            setTimeout(function(){window.location.href = 'home-teacher.html';},3500);           
+        }else {
+            setTimeout(function(){window.location.href = 'home-student.html';},3500);
+        }
+    });
 })
