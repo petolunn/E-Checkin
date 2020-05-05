@@ -18,16 +18,25 @@
     </style>
 </head>
 <body style="background-color: #ededed;" onload="refeshText()">
-    <nav class="navbar navbar-expand-lg d-flex justify-content-around" style="background: #364E71;">
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="padding-left: 2em;">
-          <a class="navbar-brand text-white" href="home-teacher.html">E-Checkin</a>
-        </div>
-        <div style="padding-right: 2em;">  
-          <form action="createClass.html" class="form-inline my-2 my-lg-0">
-                <div style="padding-left: 2em;">
-                    <img src="image/user.png" alt="" style="width: 30px;">
-                </div>
-          </form>
+  <nav class="d-flex justify-content-between" style="background: #364E71;">
+    <!-- <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="padding-left: 2em;"> -->
+    <div class="navbar-collapse" id="navbarTogglerDemo01" style="padding-left: 2em;">
+        <a class="navbar-brand text-white" href="home-teacher.html">E-Checkin</a>
+    </div>
+    <div class="justify-content-right d-flex flex-row pr-3">
+        <a href="createClass.html">
+            <button class="btn btn-warning mr-2" style="color: white;" type="submit">Create Class</button>
+        </a>
+        <div class="dropdown pt-1">
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="image/user.png" class="dropdown-toggle" style="width: 30px;">
+            </a>
+                  
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item modal-trigger" href="#" data-target="modal-account">Nantatchaporn Thangsuk</a>
+                <a class="dropdown-item" href="#">Change password</a>
+                <a class="dropdown-item" href="#" id="logout">Logout</a>
+            </div>
         </div>
     </div>
 </nav>
@@ -36,7 +45,21 @@
       <div class="row">
         <div class="col-12 col-md-3 p-0 h-100">
           <div class="subject p-3">
-            <h6 id="code"></h5>
+            <div class="d-flex justify-content-between">
+              <div class="dropdown pt-1">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <img src="image/menu-vertical.png" class="dropdown-toggle" style="width: 30px;">
+                </a>
+                    
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="#">Edit</a>
+                  <a class="dropdown-item" href="#">Delete</a>
+                </div>
+            </div>
+            
+          </div>
+            
+            <h6 id = "s"></h6>            
             <p><i id="subject"></i></p>
             <br>
             <p>7 Students<span class="mr-2"></span>1 Teacher</p>
@@ -46,27 +69,28 @@
         </div>
         <div class="col-12 col-md-9 h-100">
           <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>ลำดับ</th>
-                  <th>รหัสนักศึกษา</th>
-                  <th>ชื่อ - นามสกุล</th>
-                  <th>1</th>
-                  <th>2</th>
-                  <th>3</th>
-                  <th>4</th>
-                  <th>5</th>
-                </tr>
-              </thead>
-              <tbody class="lists">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>ลำดับ</th>
+                <th>รหัสนักศึกษา</th>
+                <th>ชื่อ - นามสกุล</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+              </tr>
+            </thead>
+            <tbody class="lists">
 
-              </tbody>
-            </table>
-          </div>
+            </tbody>
+          </table>
+</div>
           <div class="float-right">
             <a  href="#" class="text-dark mr-1"  data-toggle="modal" data-target="#myModal">Add</a>
             <a href="#" class="text-dark mr-1">Delete</a>
+            <a href="#" class="text-dark mr-1">Import</a>
             <a href="#" class="text-dark mr-1">Export</a>
           </div>
           <div class="modal fade" id="myModal" role="dialog">
@@ -133,5 +157,8 @@
     </script>
 
     <script src="db-teacher-home.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
