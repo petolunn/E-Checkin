@@ -16,4 +16,5 @@ loginForm.addEventListener('submit', (e) => {
     const password = loginForm['password'].value;
 
     auth.signInWithEmailAndPassword(email, password);
+    setTimeout(function(){window.location.href = 'home-teacher.html';},3500);
 })

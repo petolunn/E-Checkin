@@ -27,8 +27,8 @@
       <div class="row">
         <div class="col-12 col-md-3 p-0 h-100">
           <div class="subject p-3">
-            <h6>[06016306] INFORMATION SYSTEM ANALYSIS AND DESIGN (2/2019)</h5>
-            <p><i>i love isad</i></p>
+            <h6 id = "s"></h5>
+            <p><i></i></p>
             <br>
             <p>7 Students<span class="mr-2"></span>1 Teacher</p>
             <a href="checkin_std.html" class="btn btn-warning">Check</a>
@@ -82,5 +82,36 @@
         </div>
       </div>
     </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBb3S8CjVjIZ8owryUmw2hZV_LJJQW2gYM",
+            authDomain: "e-checkin-dfb17.firebaseapp.com",
+            databaseURL: "https://e-checkin-dfb17.firebaseio.com",
+            projectId: "e-checkin-dfb17",
+            storageBucket: "e-checkin-dfb17.appspot.com",
+            messagingSenderId: "1088146595491",
+            appId: "1:1088146595491:web:a115fd31ee3568b26aa916",
+            measurementId: "G-QHE8T5TMSG"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        firebase.analytics();
+    </script>
+
+    <script src="db-createClass.js"></script>
 </body>
 </html>
