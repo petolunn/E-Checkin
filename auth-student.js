@@ -66,7 +66,7 @@ signupForm.addEventListener('submit', (e) => {
     //sign up the user
     if(status){
         auth.createUserWithEmailAndPassword(em, pw).then(cred => {
-            return db.collection('users').doc(cred.user.uid).set({
+            return db.collection('users').doc(signupForm['studentid'].value).set({
                 firstname: signupForm['firstname'].value,
                 lastname: signupForm['lastname'].value,
                 studentid: signupForm['studentid'].value,

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- <script src="validator.js" type="text/javascript"></script> -->
 </head>
-<body style="background-color: #ededed;">
+<body style="background-color: #ededed;" onload="refeshText()">
     <nav class="navbar navbar-expand-lg d-flex justify-content-around" style="background: #364E71;">
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01" style="padding-left: 2em;">
           <a class="navbar-brand text-white" href="home-teacher.html">E-Checkin</a>
@@ -27,8 +27,8 @@
       <div class="row">
         <div class="col-12 col-md-3 p-0 h-100">
           <div class="subject p-3">
-            <h6 id = "s"></h5>
-            <p><i></i></p>
+            <h6 id="code"></h5>
+            <p><i id="subject"></i></p>
             <br>
             <p>7 Students<span class="mr-2"></span>1 Teacher</p>
             <a href="checkin_std.html" class="btn btn-warning">Check</a>
@@ -36,47 +36,27 @@
         </div>
         <div class="col-12 col-md-9 h-100">
           <div class="table-responsive">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>ลำดับ</th>
-                <th>รหัสนักศึกษา</th>
-                <th>ชื่อ - นามสกุล</th>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
-                <th>4</th>
-                <th>5</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>60070046</td>
-                <td>ปรัชญา ประภาวัต</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>60070039</td>
-                <td>นันทัชพร ทั้งสุข</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-                <td>x</td>
-              </tr>
-            </tbody>
-          </table>
-</div>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>ลำดับ</th>
+                  <th>รหัสนักศึกษา</th>
+                  <th>ชื่อ - นามสกุล</th>
+                  <th>1</th>
+                  <th>2</th>
+                  <th>3</th>
+                  <th>4</th>
+                  <th>5</th>
+                </tr>
+              </thead>
+              <tbody class="lists">
+
+              </tbody>
+            </table>
+          </div>
           <div class="float-right">
             <a href="#" class="text-dark mr-1">Add</a>
             <a href="#" class="text-dark mr-1">Delete</a>
-            <a href="#" class="text-dark mr-1">Import</a>
             <a href="#" class="text-dark mr-1">Export</a>
           </div>
         </div>
@@ -112,6 +92,6 @@
         firebase.analytics();
     </script>
 
-    <script src="db-createClass.js"></script>
+    <script src="db-teacher-home.js"></script>
 </body>
 </html>

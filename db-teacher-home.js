@@ -3,26 +3,12 @@ auth.onAuthStateChanged(user => {
     if (user) {
         console.log('user logged in: ', user);
         db.collection('classes').onSnapshot(snapshot => {
-            setupUI(user);
             setupClasses(snapshot.docs);
         });
     }
 });
 
 const classList = document.querySelector('.classes');
-//const accountDetails = document.querySelector('.account-details');
-
-const setupUI = (user) => {
-    if (user) {
-        db.collection('users').doc(user.uid).get().then(doc => {
-            const html = `
-            <div>Logged in as ${user.email}</div>
-            <div>${doc.data().firstname}</div>
-            `;
-            //accountDetails.innerHTML = html;
-        });
-    }
-};
 
 const setupClasses = (data) => {
     let html = '';
@@ -42,6 +28,29 @@ const setupClasses = (data) => {
     classList.innerHTML = html;
 };
 
+const lists = document.querySelector('.lists');
+
+db.collection('00000000').get().then(function(querySnapshot) {
+    let html = '';
+    querySnapshot.forEach(function(doc) {
+        const c = doc.data();
+        const d = `
+            <tr>
+                <td>${c.order}</td>
+                <td>${c.studentid}</td>
+                <td>${c.firstname} ${c.lastname}</td>
+                <td>${c.week1}</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+                <td>x</td>
+            </tr>
+        `;        
+        html += d;
+    });
+    lists.innerHTML = html;
+})
+
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
     e.preventDefault();
@@ -51,4 +60,20 @@ logout.addEventListener('click', (e) => {
 
 function changePage(){
     window.location.href = 'class-teacher.html';
+}
+
+function refeshText(){
+    var info = db.collection('classes').doc('00000000');
+    info.get().then(function(doc) {
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            document.getElementById('code').innerHTML = doc.data().code;
+            document.getElementById('subject').innerHTML = doc.data().title;
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
 }

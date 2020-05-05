@@ -10,7 +10,7 @@ const createClass = document.querySelector('#registerForm');
 createClass.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    db.collection('classes').add({
+    db.collection('classes').doc(createClass['code'].value).set({
         code: createClass['code'].value,
         title: createClass['subject'].value,
         semester: createClass['semester'].value,
