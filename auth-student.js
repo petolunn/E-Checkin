@@ -66,13 +66,13 @@ signupForm.addEventListener('submit', (e) => {
     //sign up the user
     if(status){
         auth.createUserWithEmailAndPassword(em, pw).then(cred => {
-            return db.collection('users').doc(signupForm['email'].value).set({
+            return db.collection('users').doc(signupForm['studentid'].value).set({
                 firstname: signupForm['firstname'].value,
                 lastname: signupForm['lastname'].value,
                 studentid: signupForm['studentid'].value,
                 role: 'Student'
             });
         });
-        setTimeout(function(){window.location.href = 'home-student.html';}, 3000);
+        setTimeout(function(){window.location.href = 'home-teacher.html';}, 3000);
     }
 });
