@@ -72,6 +72,23 @@ function logOut(){
     window.location.href = 'index.html';    
 }
 
+function getName(){
+    setTimeout(function(){
+        var user = firebase.auth().currentUser;
+        var email;
+        
+        if (user != null) {
+          email = user.email;
+          var info = db.collection('users').doc(email);
+          info.get().then(function(doc) {
+              if (doc.exists) {
+                  document.getElementById('username').innerHTML = doc.data().firstname + ' ' + doc.data().lastname;
+              }
+          })
+        }
+    }, 3000)   
+}
+
 function changePage(){
     window.location.href = 'class-teacher.html';
 }
