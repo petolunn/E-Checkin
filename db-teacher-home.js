@@ -102,4 +102,12 @@ function makeId(){
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     document.getElementById("tagId").value = result;
+
+    setInterval(function() {
+        var result = '';
+        for ( var i = 0; i < 3; i++ ) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        document.getElementById("tagId").value = result;        
+    },5000);
 }
