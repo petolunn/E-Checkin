@@ -32,11 +32,12 @@ const lists = document.querySelector('.lists');
 
 db.collection('00000000').get().then(function(querySnapshot) {
     let html = '';
+    let count = 1;
     querySnapshot.forEach(function(doc) {
         const c = doc.data();
         const d = `
             <tr>
-                <td>${c.order}</td>
+                <td>${count}</td>
                 <td>${c.studentid}</td>
                 <td>${c.firstname} ${c.lastname}</td>
                 <td>${c.week1}</td>
@@ -47,9 +48,22 @@ db.collection('00000000').get().then(function(querySnapshot) {
             </tr>
         `;        
         html += d;
+        count += 1;
     });
     lists.innerHTML = html;
 })
+
+const addStudent = document.querySelector('#login-Form');
+addStudent.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    db.collection('00000000').doc(addStudent['Student_id'].value).set({
+        studentid: addStudent['Student_id'].value,
+        firstname: addStudent['firstname'].value,
+        lastname: addStudent['lastname'].value,
+        week1: 'x'
+    });
+});
 
 const logout = document.querySelector('#logout');
 logout.addEventListener('click', (e) => {
