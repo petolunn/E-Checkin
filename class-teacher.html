@@ -91,8 +91,8 @@
           </table>
 </div>
           <div class="float-right">
-            <a  href="#" class="text-dark mr-1"  data-toggle="modal" data-target="#myModal">Add</a>
-            <a href="#" class="text-dark mr-1">Delete</a>
+            <a href="#" class="text-dark mr-1" data-toggle="modal" data-target="#myModal">Add</a>
+            <a href="#" class="text-dark mr-1" data-toggle="modal" data-target="#myModal_delete">Delete</a>
             <a href="#" class="text-dark mr-1">Import</a>
             <a href="#" class="text-dark mr-1">Export</a>
           </div>
@@ -121,7 +121,28 @@
                             <label for="Student_id">Student_id</label> <br>
                             <input type="text" class="form-control" id="Student_id">
                         </div>
-                        <button type="submit" class="btn btn-warning text-white" style="width: 49%;">Create</button>
+                        <button type="submit" class="btn btn-warning text-white" style="width: 49%;" value="submit">Create</button>
+                        <button type="submit" class="btn btn-danger text-white" style="width: 49%;">Cancel</button>
+                    </form>
+                   </div>
+                  </div>
+              </div>
+          </div>
+          <div class="modal fade" id="myModal_delete" role="dialog">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Delete Student</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="delete_button">
+                        
+                        <div class="form-group">
+                            <label for="Student_id">Student_id</label> <br>
+                            <input type="text" class="form-control" id="Student_id">
+                        </div>
+                        <button type="submit" class="btn btn-warning text-white" style="width: 49%;">Delete</button>
                         <button type="submit" class="btn btn-danger text-white" style="width: 49%;">Cancel</button>
                     </form>
                    </div>
