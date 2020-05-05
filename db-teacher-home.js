@@ -63,6 +63,8 @@ addStudent.addEventListener('submit', (e) => {
         lastname: addStudent['lastname'].value,
         week1: 'x'
     });
+
+    setTimeout(function(){window.location.href = 'class-teacher.html';}, 3000);
 });
 
 const logout = document.querySelector('#logout');
