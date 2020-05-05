@@ -86,7 +86,7 @@ function getName(){
               }
           })
         }
-    }, 3000)   
+    }, 500)   
 }
 
 function changePage(){
