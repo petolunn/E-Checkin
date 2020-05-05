@@ -56,7 +56,6 @@ db.collection('00000000').get().then(function(querySnapshot) {
 const addStudent = document.querySelector('#login-Form');
 addStudent.addEventListener('submit', (e) => {
     e.preventDefault();
-    
     db.collection('00000000').doc(addStudent['Student_id'].value).set({
         studentid: addStudent['Student_id'].value,
         firstname: addStudent['firstname'].value,
@@ -98,8 +97,8 @@ function refeshText(){
     info.get().then(function(doc) {
         if (doc.exists) {
             console.log("Document data:", doc.data());
-            document.getElementById('code').innerHTML = doc.data().code;
-            document.getElementById('subject').innerHTML = doc.data().title;
+            document.getElementById("code").innerHTML = doc.data().code;
+            document.getElementById("subject").innerHTML = doc.data().title;
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
@@ -118,11 +117,34 @@ function makeId(){
     }
     document.getElementById("tagId").value = result;
 
+    let count = 0;
+
     setInterval(function() {
         var result = '';
         for ( var i = 0; i < 3; i++ ) {
             result += characters.charAt(Math.floor(Math.random() * charactersLength));
         }
-        document.getElementById("tagId").value = result;        
+        document.getElementById("tagId").value = result;
+        db.collection('code').doc('code').update({
+            tCode: result,
+        });
     },5000);
+    setInterval(function() {
+        var info = db.collection('code').doc('code');
+        info.get().then(function(doc) {
+            if(doc.data().tCode == doc.data().sCode){
+                console.log('Match!');
+                update(count);
+            }
+        });
+    },3000);
+}
+
+function update(x){
+    x += 1;
+    document.getElementById("sCount").innerHTML = x + ' Students';
+}
+
+function check(x){
+    console.log(x);
 }

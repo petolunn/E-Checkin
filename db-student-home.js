@@ -48,5 +48,5 @@ function logOut(){
 }
 
 function changePage(){
-    window.location.href = 'class-teacher.html';
+    window.location.href = 'class-student.html';
 }

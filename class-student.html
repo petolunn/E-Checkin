@@ -48,7 +48,7 @@
             <p><i>i love isad</i></p>
             <br>
             <p>7 Students<span class="mr-2"></span>1 Teacher</p>
-            <a href="check_s.html" class="btn btn-warning">Check</a>
+            <a href="check-student.html" class="btn btn-warning">Check</a>
           </div>
         </div>
         <div class="col-12 col-md-9 h-100">
@@ -90,31 +90,6 @@
                 <td>5</td>
                 <td>14/01/63</td>
                 <td>ขาดเรียน</td>
-                
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>14/01/63</td>
-                <td>ขาดเรียน</td>
-                
-              </tr>
-              <tr>
-                <td>7</td>
-                <td>14/01/63</td>
-                <td>ขาดเรียน</td>
-                
-              </tr>
-              <tr>
-                <td>8</td>
-                <td>14/01/63</td>
-                <td>ขาดเรียน</td>
-                
-              </tr>
-              <tr>
-                <td>9</td>
-                <td>14/01/63</td>
-                <td>ขาดเรียน</td>
-                
               </tr>
             </tbody>
           </table>
@@ -123,6 +98,36 @@
         </div>
       </div>
     </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBb3S8CjVjIZ8owryUmw2hZV_LJJQW2gYM",
+            authDomain: "e-checkin-dfb17.firebaseapp.com",
+            databaseURL: "https://e-checkin-dfb17.firebaseio.com",
+            projectId: "e-checkin-dfb17",
+            storageBucket: "e-checkin-dfb17.appspot.com",
+            messagingSenderId: "1088146595491",
+            appId: "1:1088146595491:web:a115fd31ee3568b26aa916",
+            measurementId: "G-QHE8T5TMSG"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        firebase.analytics();
+    </script>
+    
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
