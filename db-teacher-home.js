@@ -65,6 +65,14 @@ addStudent.addEventListener('submit', (e) => {
         week1: 'x'
     });
 
+    
+});
+
+const deleteStudent = document.querySelector('#delete_button');
+deleteStudent.addEventListener('submit', (e) => {
+    e.preventDefault();
+    db.collection('00000000').doc(deleteStudent['Student_id'].value).delete();
+
     setTimeout(function(){window.location.href = 'class-teacher.html';}, 3000);
 });
 
