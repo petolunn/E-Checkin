@@ -30,6 +30,8 @@ const setupClasses = (data) => {
 
 const lists = document.querySelector('.lists');
 
+const listnames = document.querySelector('.listname');
+
 db.collection('00000000').get().then(function(querySnapshot) {
     let html = '';
     let count = 1;
@@ -99,6 +101,7 @@ function refeshText(){
             console.log("Document data:", doc.data());
             document.getElementById("code").innerHTML = doc.data().code;
             document.getElementById("subject").innerHTML = doc.data().title;
+            document.getElementById("countId").innerHTML = count + ' Students';
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
@@ -106,6 +109,10 @@ function refeshText(){
     }).catch(function(error) {
         console.log("Error getting document:", error);
     });
+    var info2 = db.collection('00000000').doc('60070010');
+    info2.get().then(function(doc) {
+        document.getElementById('demo').innerHTML = doc.data().week1;
+    })
 }
 
 function makeId(){
@@ -116,8 +123,6 @@ function makeId(){
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
     document.getElementById("tagId").value = result;
-
-    let count = 0;
 
     setInterval(function() {
         var result = '';
@@ -130,14 +135,30 @@ function makeId(){
         });
     },5000);
     setInterval(function() {
+        let count = 0;
+        let html = ' ';
         var info = db.collection('code').doc('code');
         info.get().then(function(doc) {
             if(doc.data().tCode == doc.data().sCode){
                 console.log('Match!');
                 update(count);
+                var infoUpdate = db.collection('users').doc('60070010');
+                infoUpdate.get().then(function(doc) {
+                    const c = doc.data();
+                    const d = `
+                        <div class="col-md-3 col-sm-4 col-xs-6 col-12">
+                            ${c.firstname} ${c.lastname}
+                        </div>
+                    `;        
+                    html += d;
+                    listnames.innerHTML = html;
+                    db.collection('00000000').doc('60070010').update({
+                        week1: '✔'
+                    });
+                });
             }
         });
-    },3000);
+    },5000);
 }
 
 function update(x){

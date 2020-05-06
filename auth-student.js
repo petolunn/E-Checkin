@@ -73,6 +73,6 @@ signupForm.addEventListener('submit', (e) => {
                 role: 'Student'
             });
         });
-        setTimeout(function(){window.location.href = 'home-teacher.html';}, 3000);
+        setTimeout(function(){window.location.href = 'home-student.html';}, 3000);
     }
 });
