@@ -5,10 +5,14 @@ sendCode.addEventListener('submit', (e) => {
     var user = firebase.auth().currentUser;
     if (user != null) {
         email = user.email;
+        var info = db.collection('users').doc(email);
+        info.get().then(function(doc) {
+            db.collection('code').doc('code').update({
+                sCode: sendCode['password'].value,
+                email: email,
+                studentid: doc.data().studentid
+            });
+        })
       }
-    db.collection('code').doc('code').update({
-        sCode: sendCode['password'].value,
-        email: email
-    });
     setTimeout(function(){window.location.href = 'class-student.html';}, 3000);
 })

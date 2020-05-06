@@ -33,9 +33,9 @@
                     </a>
                           
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href="#">Nantatchaporn Thangsuk</a>
+                        <a class="dropdown-item" href="#" id="username">Nantatchaporn Thangsuk</a>
                         <a class="dropdown-item" href="#">Change password</a>
-                        <a class="dropdown-item" href="#" id="logout">Logout</a>
+                        <a class="dropdown-item" href="#" id="logout" onclick="logOut();">Logout</a>
                     </div>
                 </div>
             </div>
@@ -48,7 +48,6 @@
             <h6 id="code"></h5>
             <p><i id="subject"></i></p>
             <br>
-            <p id="countId">0 Students<span class="mr-2"></span>1 Teacher</p>
             <a href="check-student.html" class="btn btn-warning">Check</a>
           </div>
         </div>
@@ -71,25 +70,25 @@
               <tr>
                 <td>2</td>
                 <td>xx/xx/xx</td>
-                <td>x</td>
+                <td id='demo2'>x</td>
                 
               </tr>
               <tr>
                 <td>3</td>
                 <td>xx/xx/xx</td>
-                <td>x</td>
+                <td id='demo3'>x</td>
                 
               </tr>
               <tr>
                 <td>4</td>
                 <td>xx/xx/xx</td>
-                <td>x</td>
+                <td id='demo4'>x</td>
                 
               </tr>
               <tr>
                 <td>5</td>
                 <td>xx/xx/xx</td>
-                <td>x</td>
+                <td id='demo5'>x</td>
               </tr>
             </tbody>
           </table>
@@ -128,7 +127,7 @@
         firebase.analytics();
     </script>
     
-    <script src="db-teacher-home.js"></script>
+    <script src="db-student-home.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

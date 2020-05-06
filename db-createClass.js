@@ -15,7 +15,8 @@ createClass.addEventListener('submit', (e) => {
         title: createClass['subject'].value,
         semester: createClass['semester'].value,
         year: createClass['year'].value,
-        description: createClass['description'].value
+        description: createClass['description'].value,
+        count: 0
     });
 
     setTimeout(function(){window.location.href = 'home-teacher.html';}, 3000);
